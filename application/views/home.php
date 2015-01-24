@@ -53,19 +53,6 @@
 		<path d="M0 0 L50 100 L100 0 Z" />
 	</svg>
 </div-->
-<!-- Grid Icon -->
-<section class="container" id="vertical_slider">
-	<div class="row section-head">
-		<header class="col col-sm-12 centered">
-			<section>
-				<h2>Lorem ipsum</h2>
-			</section>
-			<hr>
-			<p class="descriptionText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
-		</header>
-	</div>
-</section><!-- Vertical Slider -->
-
 <div class="dt-shop-category">
 	<div class="container">
 		<div class="section-head row">

@@ -29,7 +29,7 @@
 		<script type="text/javascript" src="<?php echo base_url('/assets/js/scrollspy.js'); ?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('/assets/js/modal_effects.js'); ?>"></script>   
 	</head>
-	<body class="<?php echo ($current_view == 'home')? 'home': 'blog'; ?>" data-base-url="<?php echo base_url('/'); ?>">
+	<body class="<?php echo ($current_view === 'home')? 'home': 'blog'; ?>" data-base-url="<?php echo base_url('/'); ?>">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="row">
@@ -47,21 +47,21 @@
 							<div class="left-cell">
 								<ul class="nav navbar-nav">
 									<?php
-										foreach($menus as $menu):
-											if(count($menu) > 2) {
+										foreach ($menu_list as $menu) {
+											if ($menu['option_key'] === 'products') {
 												echo "<li class='dropdown'>";
-												echo "<a href='javascript:void(0);' class='dropdown-toggle' data-toggle='dropdown'>".$menu['option_name']."</a>";
+												echo "<a href='javascript:void(0);' class='dropdown-toggle' data-toggle='dropdown'>".$menu['option_value']."</a>";
 												echo "<ul class='dropdown-menu'>";
-												echo "<li><h5 class='menuTitle'>".$menu['option_name']."</h5></li>";
-												foreach($menu['dropdown'] as $sub_menu):
-													echo "<li><a href='".site_url($current_lang.'/product-type/'.$sub_menu['row_id'])."'>".$sub_menu['product_type_name']."</a></li>";
-												endforeach;
+												echo "<li><h5 class='menuTitle'>".$menu['option_value']."</h5></li>";
+												foreach($product_type_list as $product_type) {
+													echo "<li><a href='".site_url($current_language.'/product-type/'.$product_type['row_id'])."'>".$product_type['product_type_name_'.$current_language]."</a></li>";
+												}
 												echo "</ul>";
 												echo "</li>";
 											} else {
-												echo "<li><a href='".site_url($current_lang.'/'.$menu['option_value'])."'>".$menu['option_name']."</a></li>";
+												echo "<li><a href='".site_url($current_language.'/'.$menu['option_key'])."'>".$menu['option_value']."</a></li>";
 											}
-										endforeach;
+										}
 									?>
 								</ul>
 							</div>

@@ -18,7 +18,7 @@ class About extends CI_Controller {
 		$params['footer']['current_view'] = $params['header']['current_view'];
 
 		$this->load->view('header', $params['header']);
-		$this->load->view('about/index');
+		$this->load->view('about_us_view');
 		$this->load->view('footer', $params['footer']);
 	}
 }
